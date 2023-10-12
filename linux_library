@@ -1,18 +1,18 @@
 visual studio 2022 실행 -> 코드를 사용하지 않고 계속 -> 도구 -> 명령줄 -> 개발자 명령 프롬포트
 
-mkdir anu
-cd anu
+mkdir anu //anu 디렉터리를 생성
+cd anu //anu 디렉터리로 들어감
 
-notepad test.c
-cl test.c
-notepad add.c
+notepad test.c //test.c명의 메모장을 실행또는 생성
+cl test.c 
+notepad add.c // add.c명의 메모장을 실행또는 생성
 cl add.c
 
-del *.obj
-del *.exe
+del *.obj // .obj 파일을 모두 삭제
+del *.exe /.exe 파일을 모두 삭제
 cl /c *.c
 lib /OUT:my.lib add.obj
-link test my.lib
+link test my.lib //test를 my.lib와 연결
 
 <test.c>
 #include <stdio.h>
@@ -25,7 +25,3 @@ int main(){
 int add(int a, int b){
   return (a + b);
 }
-
-<소감문>
-리눅스를 사용해보니 알아서 처리해주던 개발환경과 달리 제가 직접 연결해주거나 파일을 만들어줘야 한다는 점이 조금 귀찮고 힘들었지만, 
-저의 꿈 중 하나인 개발자가 되기 위해선 꼭 숙련되어야하는 과정이라 이야기하셔서 도중에 포기하지않고 열심히 공부하겠습니다.
