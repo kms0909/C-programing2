@@ -1,0 +1,29 @@
+자료구조란?
+
+스택이란?
+
+스택 예제 코드
+#include <stdio.h>
+
+int top = -1;
+int stack[1000];
+
+void push(int value) {
+	stack[++top] = value;
+}
+
+int pop() {
+	return (stack[top--]);
+}
+
+int main(void) {
+	int poppedValue1, poppedValue2, poppedValue3;
+	push(1);
+	push(2);
+	push(3);
+	poppedValue1 = pop();
+	poppedValue2 = pop();
+	poppedValue3 = pop();
+
+	printf("팝한 값 : %d %d %d\n", poppedValue1, poppedValue2, poppedValue3);
+}
