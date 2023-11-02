@@ -1,0 +1,31 @@
+1. 스택이란?
+후입선출 (LIFO) 원칙에 따라 데이터를 저장하는 자료구조입니다.
+
+2. 스택의 응용
+주로 웹 브라우저의 전에 있던 페이지나 앞에 있던 페이지로 가기, 되돌리기 또는 앞으로가기 등의 기능으로 사용됩니다.
+
+3. 스택 구현
+#include <stdio.h>
+
+int top = -1;
+int stack[1000];
+
+void push(int value) {
+	stack[++top] = value;
+}
+
+int pop() {
+	return (stack[top--]);
+}
+
+int main(void) {
+	int poppedValue1, poppedValue2, poppedValue3;
+	push(1);
+	push(2);
+	push(3);
+	poppedValue1 = pop();
+	poppedValue2 = pop();
+	poppedValue3 = pop();
+
+	printf("팝한 값 : %d %d %d\n", poppedValue1, poppedValue2, poppedValue3);
+}
