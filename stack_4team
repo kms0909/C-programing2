@@ -10,41 +10,47 @@
 int sp = -1;
 int v[1000];
 
-void push(int i){
-	if(sp == 999) {
-		printf("Stack is Full!!\n");
-	 	return;
-	} 
-	esle v[++sp] = i; 
+void push(int i) {
+	if (sp == 999) {
+		printf("Stack is Full\n");
+		return;
+	}
+	else v[++sp] = i;
 }
-int pop(){ 
-	if(sp == -1){
+int pop() {
+	if (sp == -1) {
 		printf("Stack is Empty\n");
 		return 0;
-    	}
-	return(v[sp--]); 
+	}
+	return(v[sp--]);
 }
-int main(){
+int main() {
 	int menu, x, i;
 
-	printf("1 : 푸시\n2 : 팝\n3 : 출력\n0 : 종료");
-	while(1){
+	printf("1 : 푸시\n2 : 팝\n3 : 출력\n0 : 종료\n");
+	while (1) {
 		scanf("%d", &menu);
 		if (menu == 0) return 0;
-	
+
 		switch (menu) {
 		case 1:
 			printf("데이터 입력 : ");
 			scanf("%d", &x);
-			push(x);
+			if(sp < 999){
+				push(x);
+			}
 			break;
-	
+
 		case 2:
-			printf("팝 데이터는 %d입니다.\n", pop());
+			if(sp >= 0){
+				printf("팝 데이터는 %d입니다.\n", pop());
+				break;
+			}
+			pop();
 			break;
-	
+
 		case 3:
-			for(i = 0; i < sp; i++){
+			for (i = 0; i <= sp; i++) {
 				printf("%d ", v[i]);
 			}
 			printf("\n");
