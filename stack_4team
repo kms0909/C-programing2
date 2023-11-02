@@ -5,27 +5,34 @@
 주로 웹 브라우저의 전에 있던 페이지나 앞에 있던 페이지로 가기, 되돌리기 또는 앞으로가기 등의 기능으로 사용됩니다.
 
 3. 스택 구현
-#include <stdio.h>
+#include<stdio.h>
 
-int top = -1;
-int stack[1000];
+int sp = -1;
+int v[1000];
 
-void push(int value) {
-	stack[++top] = value;
+void push(int i){
+	if(sp == 999) {
+		printf("Stack is Full!!\n");
+	 	return;
+	} 
+	esle v[++sp] = i; 
 }
-
-int pop() {
-	return (stack[top--]);
+int pop(){ 
+	if(sp == -1){
+		printf("Stack is Empty\n");
+		return 0;
+    	}
+	return(v[sp--]); 
 }
-
-int main(void) {
-	int poppedValue1, poppedValue2, poppedValue3;
+int main(){
 	push(1);
 	push(2);
 	push(3);
-	poppedValue1 = pop();
-	poppedValue2 = pop();
-	poppedValue3 = pop();
-
-	printf("팝한 값 : %d %d %d\n", poppedValue1, poppedValue2, poppedValue3);
+	printf("%d\n", pop()); 
+	printf("%d\n", pop());
+	printf("%d\n", pop());
+		
+	pop(); // 언더플로우
+		
+	for(int i=0;i<=1000;i++) push(1); // 오버플로우
 }
