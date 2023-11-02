@@ -26,7 +26,6 @@ int pop(){
 }
 int main(){
 	int menu, x, i;
-	int count = 0;
 
 	printf("1 : 푸시\n2 : 팝\n3 : 출력\n0 : 종료");
 	while(1){
@@ -38,16 +37,14 @@ int main(){
 			printf("데이터 입력 : ");
 			scanf("%d", &x);
 			push(x);
-			++count;
 			break;
 	
 		case 2:
 			printf("팝 데이터는 %d입니다.\n", pop());
-			count--;
 			break;
 	
 		case 3:
-			for(i = 0; i < count; i++){
+			for(i = 0; i < sp; i++){
 				printf("%d ", v[i]);
 			}
 			printf("\n");
