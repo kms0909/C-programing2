@@ -25,14 +25,33 @@ int pop(){
 	return(v[sp--]); 
 }
 int main(){
-	push(1);
-	push(2);
-	push(3);
-	printf("%d\n", pop()); 
-	printf("%d\n", pop());
-	printf("%d\n", pop());
-		
-	pop(); // 언더플로우
-		
-	for(int i=0;i<=1000;i++) push(1); // 오버플로우
+	int menu, x, i;
+	int count = 0;
+
+	printf("1 : 푸시\n2 : 팝\n3 : 출력\n0 : 종료");
+	while(1){
+		scanf("%d", &menu);
+		if (menu == 0) return 0;
+	
+		switch (menu) {
+		case 1:
+			printf("데이터 입력 : ");
+			scanf("%d", &x);
+			push(x);
+			++count;
+			break;
+	
+		case 2:
+			printf("팝 데이터는 %d입니다.\n", pop());
+			count--;
+			break;
+	
+		case 3:
+			for(i = 0; i < count; i++){
+				printf("%d ", v[i]);
+			}
+			printf("\n");
+			break;
+		}
+	}
 }
