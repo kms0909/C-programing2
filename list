@@ -1,0 +1,39 @@
+1. 리스트란?
+
+2. 리스트 응용
+
+3. 리스트 구현
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct list {
+	int val;
+	struct list* next;
+}MYLIST;
+
+int main() {
+	MYLIST* head, * my1, * my2, * my3, * my4;
+
+	my1 = (MYLIST*)malloc(sizeof(MYLIST));
+	my2 = (MYLIST*)malloc(sizeof(MYLIST));
+	my3 = (MYLIST*)malloc(sizeof(MYLIST));
+	my4 = (MYLIST*)malloc(sizeof(MYLIST));
+
+	my1->val = 5; my1->next = my2;
+	my2->val = 8; my2->next = my3;
+	my3->val = 35; my3->next = my4;
+	my4->val = 88; my4->next = NULL;
+
+	head = my1;
+	while (head) {
+		printf("%d\n", head->val);
+		head = head->next;
+	}
+
+	free(my1);
+	free(my2);
+	free(my3);
+	free(my4);
+
+	return 0;
+}
