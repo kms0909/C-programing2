@@ -33,7 +33,7 @@ void copyFile(const char* srcPath, const char* destPath) {
 }
 
 int main() {
-    const char* srcPath = "sj.txt";           // 복사하고싶은 파일 명
+    const char* srcPath = "sj.txt";           // 복사하고 싶은 파일 명 지정
     const char* destPath = "sj2.txt";         // 복사된 파일 명 지정
 
     // 파일 복사 함수 호출
@@ -41,3 +41,9 @@ int main() {
 
     return 0;
 }
+
+사용법---------------------------------------------------------------
+main함수 안에 있는 srcPath에 복사하고 싶은 파일 이름을 적는다.
+복사를 했을 때 나오는 이름을 destPath에 적는다.
+컴파일 후 실행한다.
+
